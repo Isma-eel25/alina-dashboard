@@ -1,0 +1,30 @@
+body {
+    background-color: #111827;
+    font-family: 'Inter', sans-serif;
+    color: #e5e7eb;
+}
+.tab.active {
+    color: #ffffff;
+    background-color: #374151;
+}
+.chat-bubble {
+    padding: 10px 16px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    max-width: 80%;
+    line-height: 1.6;
+}
+.chat-bubble-user {
+    background-color: #4f46e5;
+    margin-left: auto;
+    color: #ffffff;
+}
+.chat-bubble-ai {
+    background-color: #374151;
+    margin-right: auto;
+    color: #d1d5db;
+}
+#chat-history {
+    display: flex;
+    flex-direction: column;
+}

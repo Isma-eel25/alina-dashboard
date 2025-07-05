@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alina Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 font-inter text-gray-200">
+    <header class="bg-gray-800 p-6">
+        <h1 class="text-3xl font-bold text-white">Alina Dashboard v2.2</h1>
+        <p class="text-lg text-gray-400">Welcome, Isma-eel</p>
+    </header>
+    <nav class="bg-gray-700 p-4">
+        <ul class="flex space-x-4">
+            <li><button id="tab-scriptorium" class="tab px-4 py-2 text-gray-400 hover:text-white">Scriptorium</button></li>
+            <li><button id="tab-performance" class="tab px-4 py-2 text-gray-400 hover:text-white">Performance</button></li>
+            <li><button id="tab-chat" class="tab px-4 py-2 text-gray-400 hover:text-white">Chat</button></li>
+        </ul>
+    </nav>
+    <main class="p-6">
+        <div id="view-scriptorium" class="view hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div id="project-index-content" class="bg-gray-800 p-6 rounded-lg border border-gray-600"></div>
+                <div id="manuscript-content" class="bg-gray-800 p-6 rounded-lg border border-gray-600 col-span-1 lg:col-span-2"></div>
+            </div>
+             <div id="revision-notes-content" class="bg-gray-800 p-6 rounded-lg border border-gray-600 border-l-4 border-l-indigo-600 mt-6"></div>
+        </div>
+        <div id="view-performance" class="view hidden">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <div class="bg-gray-800 p-6 rounded-lg border border-gray-600 text-center"><h3 class="text-lg font-semibold">Active Testers</h3><p id="kpi-active-testers" class="text-3xl font-bold"></p></div>
+                <div class="bg-gray-800 p-6 rounded-lg border border-gray-600 text-center"><h3 class="text-lg font-semibold">Total Conversations</h3><p id="kpi-total-conversations" class="text-3xl font-bold"></p></div>
+                <div class="bg-gray-800 p-6 rounded-lg border border-gray-600 text-center"><h3 class="text-lg font-semibold">Avg. Session Time</h3><p id="kpi-avg-session" class="text-3xl font-bold"></p></div>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg border border-gray-600">
+                <h2 class="text-xl font-semibold mb-4">Recent Conversations</h2>
+                <table class="w-full text-left">
+                    <thead><tr class="text-gray-400"><th class="p-2">ID</th><th class="p-2">Start Time</th><th class="p-2">Duration</th><th class="p-2">Messages</th></tr></thead>
+                    <tbody id="conversations-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+        <div id="view-chat" class="view hidden">
+            <div class="flex flex-col h-[calc(100vh-17rem)] bg-gray-800 rounded-lg border border-gray-600">
+                <div id="chat-history" class="flex-grow p-6 overflow-y-auto flex flex-col space-y-4"></div>
+                <div class="p-4 bg-gray-900 border-t border-gray-700"><form id="chat-form" class="flex gap-4"><input id="chat-input" type="text" class="flex-grow p-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-indigo-600" placeholder="Type your message..."><button type="submit" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 rounded text-white font-bold">Send</button></form></div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
