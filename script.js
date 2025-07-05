@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         addMessageToChat(message, 'user');
         chatInput.value = '';
         try {
-            const res = await fetch('http://5.150.124.88:5000/api/chat', {
+            const res = await fetch('https://alina-api.dev-cloud.run/api/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ message: message, userID: 'isma-eel' })
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function populateScriptorium() {
         try {
-            const res = await fetch('http://5.150.124.88:5000/api/scriptorium');
+            const res = await fetch('https://alina-api.dev-cloud.run/api/scriptorium');
             scriptoriumData = await res.json();
             const indexContent = document.getElementById('project-index-content');
             indexContent.innerHTML = `
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function populatePerformance() {
         try {
-            const res = await fetch('http://5.150.124.88:5000/api/performance');
+            const res = await fetch('https://alina-api.dev-cloud.run/api/performance');
             const data = await res.json();
             document.getElementById('kpi-active-testers').textContent = data.activeTesters;
             document.getElementById('kpi-total-conversations').textContent = data.totalConversations;
